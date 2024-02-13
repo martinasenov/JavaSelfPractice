@@ -1,8 +1,46 @@
 package week16_AlgoQuestions;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class FreqOfChars {
 
+    public static void main(String[] args) {
 
+
+        System.out.println(freqOfChars("irresponsible"));
+
+
+    }
+
+
+
+public static Map<Character,Integer> freqOfChars(String word){
+
+    Map<Character,Integer> map=new LinkedHashMap<>();
+
+    if(word==null){
+        return null;
+    }
+    if (word.isEmpty()) {
+        return map;
+    }
+
+    for (int i = 0; i < word.length(); i++) {
+        int count=0;
+
+        for (int j = 0; j < word.length(); j++) {
+
+            if (word.charAt(i)==word.charAt(j)){
+                count++;
+            }
+        }
+        map.put(word.charAt(i),count);
+    }
+
+    return map;
+
+}
 
 }
 
