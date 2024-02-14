@@ -1,7 +1,57 @@
 package week16_AlgoQuestions;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class IndexOfFirstNonRepeatingVowel {
+
+
+    public static void main(String[] args) {
+
+
+        System.out.println(nonRepeatingVowelIndex("google"));
+
+
+    }
+
+
+    public static int nonRepeatingVowelIndex(String word) {
+
+        Map<Character, int[]> map = new LinkedHashMap<>();
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+
+
+        for (int i = 0; i < word.length(); i++) {
+
+            char ch = word.charAt(i);
+
+            for (char vowel : vowels) {
+                if (ch == vowel) {
+                    if (!map.containsKey(ch)) {
+                        map.put(ch, new int[]{1, i});
+                    } else {
+                        map.get(ch)[0]++;
+                    }
+                    break;
+                }
+            }
+        }
+
+
+        for (Map.Entry<Character, int[]> entry : map.entrySet()) {
+            if (entry.getValue()[0] == 1) {
+                return entry.getValue()[1];
+            }
+        }
+
+        return -1;
+
+    }
 }
+
+
+
+
 
 
 
