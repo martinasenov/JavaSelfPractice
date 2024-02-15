@@ -1,5 +1,6 @@
 package week16_AlgoQuestions;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -10,48 +11,53 @@ public class IndexOfFirstNonRepeatingVowel {
 
 
         System.out.println(nonRepeatingVowelIndex("google"));
+        System.out.println(nonRepeatingVowelIndex("mood"));
+        System.out.println(nonRepeatingVowelIndex("responsible"));
+        System.out.println(nonRepeatingVowelIndex(""));
 
 
     }
 
 
-    public static int nonRepeatingVowelIndex(String word) {
+    public static String nonRepeatingVowelIndex(String word) {
 
-        Map<Character, int[]> map = new LinkedHashMap<>();
-        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        Map<Character,Integer> freqMap=new LinkedHashMap<>();
+        char[] vowels={'a','e','i','o','u'};
 
+        if(word==null){
+            return "null";
+        }
+        if (word.isEmpty()) {
+            return "the word is empty";
+        }
 
         for (int i = 0; i < word.length(); i++) {
+            int count=0;
 
-            char ch = word.charAt(i);
+            for (int j = 0; j < word.length(); j++) {
 
-            for (char vowel : vowels) {
-                if (ch == vowel) {
-                    if (!map.containsKey(ch)) {
-                        map.put(ch, new int[]{1, i});
-                    } else {
-                        map.get(ch)[0]++;
-                    }
-                    break;
+                if (word.charAt(i)==word.charAt(j)){
+                    count++;
                 }
             }
+            freqMap.put(word.charAt(i),count);
         }
 
+        String result="";
+        for (Map.Entry<Character, Integer> eachEntry : freqMap.entrySet()) {
 
-        for (Map.Entry<Character, int[]> entry : map.entrySet()) {
-            if (entry.getValue()[0] == 1) {
-                return entry.getValue()[1];
+            for (char vowel : vowels) {
+               if ( eachEntry.getKey()==vowel && eachEntry.getValue()<2){
+                   return result+=eachEntry.getKey()+":"+word.indexOf(eachEntry.getKey());
+               }
             }
         }
-
-        return -1;
-
+        return "no non-repeating vowel";
     }
+
+
+
 }
-
-
-
-
 
 
 
