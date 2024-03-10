@@ -10,10 +10,9 @@ public class SumOfDigits {
     public static void main(String[] args) {
 
 
-        System.out.println(sumOfDigits(16));
-        System.out.println(sumOfDigits(942));
-        System.out.println(sumOfDigits(132189));
-        System.out.println(sumOfDigits(493193));
+        System.out.println(sumOfDigits(687));
+        System.out.println(sumOfDigits(12));
+        System.out.println(sumOfDigits(37));
 
 
     }
@@ -25,7 +24,7 @@ public class SumOfDigits {
         String str=String.valueOf(number);
 
         for (int i = 0; i < str.length(); i++) {
-            result+=Integer.valueOf(str.charAt(i)+"");
+            result+=Integer.parseInt(str.charAt(i)+"");
         }
         return result;
     }

@@ -24,7 +24,7 @@ public class SumOfDigitsUntilProducingSingleDigit {
             result=0;
 
             for (int i = 0; i < str.length(); i++) {
-                result+=Integer.valueOf(str.charAt(i)+"");
+                result+=Integer.parseInt(str.charAt(i)+"");
             }
 
            str=(String.valueOf(result));
