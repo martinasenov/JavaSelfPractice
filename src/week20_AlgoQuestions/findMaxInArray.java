@@ -8,7 +8,7 @@ public class findMaxInArray {
 
         int[] array = {6, 8, 3, 5, 1, 9};
 
-        System.out.println(max(array));
+        System.out.println(max(null));
 
 
     }
@@ -18,7 +18,7 @@ public class findMaxInArray {
 
     public static Integer max (int [] array){
 
-        if (array.equals(null)){
+        if (array==null){
             return null;
         }
 
