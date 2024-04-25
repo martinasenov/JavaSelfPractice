@@ -22,7 +22,9 @@ public class MoveZeros {
         if (nums == null || nums.length == 0) {
             throw new IllegalArgumentException("Array can not be null or empty");
         }
+
         int insertPos = 0; // This will keep track of the position where we need to insert the next non-zero number.
+
         for (int num : nums) {
             if (num != 0) {
                 nums[insertPos++] = num; // Place the non-zero number at the 'insertPos' and then increase 'insertPos'.
