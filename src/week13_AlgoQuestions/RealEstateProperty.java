@@ -8,8 +8,6 @@ public class RealEstateProperty {
 
     public static void main(String[] args) {
 
-
-
         Square squareHouse1=new Square("Whispering Willows",20);
         Square squareHouse2=new Square("Twilight Grove",25);
         Square squareHouse3=new Square("Garden of Eden",35);

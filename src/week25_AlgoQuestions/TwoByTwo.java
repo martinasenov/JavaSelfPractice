@@ -24,7 +24,6 @@ public class TwoByTwo {
         return map.entrySet().stream()
                 .filter(p->p.getValue()==2)
                 .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
-
     }
 
 
