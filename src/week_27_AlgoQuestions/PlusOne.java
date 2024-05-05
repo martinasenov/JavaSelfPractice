@@ -26,9 +26,13 @@ public class PlusOne {
 
     public static void main(String[] args) {
 
-        int [] nums ={9,9,9,9};
+        int [] nums ={9,7,9,8};
+        int [] nums2 ={9,9,9,9};
+        int [] nums3 ={9};
 
         System.out.println(Arrays.toString(plusOne(nums)));
+        System.out.println(Arrays.toString(plusOne(nums2)));
+        System.out.println(Arrays.toString(plusOne(nums3)));
 
 
     }
