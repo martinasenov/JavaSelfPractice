@@ -1,7 +1,6 @@
-package weel_28_AlgoQuestions;
+package week_28_AlgoQuestions;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class HappyNumber {
