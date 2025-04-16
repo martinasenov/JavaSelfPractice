@@ -8,64 +8,57 @@ public class ReverseArrayInPlace {
         System.out.println();
 
 
-
-        String [] array={"arrayList", "NestedLoop", "overloading","java", "inheritance","encapsulation","Exception"};
+        String[] array = {"arrayList", "NestedLoop", "overloading", "java", "inheritance", "encapsulation", "Exception"};
         reverseArrayInPlace(array);
 
-        int [] array2={1,2,3,4,5,6,7,8,9,10};
+        int[] array2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         reverseArrayInPlace(array2);
 
 
-        int[] array3={1};
+        int[] array3 = {1};
         reverseArrayInPlace(array3);
 
 
-
-        String [] array4={"arrayList"};
+        String[] array4 = {"arrayList"};
         reverseArrayInPlace(array4);
 
 
-
-
-
     }
 
 
-    public static void reverseArrayInPlace(String [] array){
+    public static void reverseArrayInPlace(String[] array) {
 
-        String temp="";
+        String temp = "";
 
-        for (int i = array.length-1; i >= 0; i--) {
+        for (int i = array.length - 1; i >= 0; i--) {
 
-                temp+=array[i]+" ";
+            temp += array[i] + " ";
         }
 
         for (int i = 0; i < array.length; i++) {
 
-            array[i]=temp.substring(0,temp.indexOf(" "));
+            array[i] = temp.substring(0, temp.indexOf(" "));
 
-            temp=temp.substring(temp.indexOf(" ")+1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
         }
 
         System.out.println(Arrays.toString(array));
     }
 
 
+    public static void reverseArrayInPlace(int[] array) {
+        String temp = "";
 
 
-    public static void reverseArrayInPlace(int [] array){
-        String temp="";
-
-
-        for (int i = array.length-1; i >= 0; i--) {
-                temp+=array[i]+" ";
+        for (int i = array.length - 1; i >= 0; i--) {
+            temp += array[i] + " ";
         }
 
         for (int i = 0; i < array.length; i++) {
 
-            array[i]= Integer.parseInt(temp.substring(0,temp.indexOf(" ")));
+            array[i] = Integer.parseInt(temp.substring(0, temp.indexOf(" ")));
 
-            temp=temp.substring(temp.indexOf(" ")+1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
         }
 
         System.out.println(Arrays.toString(array));
@@ -73,13 +66,26 @@ public class ReverseArrayInPlace {
     }
 
 
+    public static void reverseArray(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        // Swap elements from the outermost towards the center
+        while (left < right) {
+            // Swap the elements at left and right positions
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+
+            // Move the pointers closer to the center
+            left++;
+            right--;
+        }
 
 
-
+    }
 
 }
-
-
 
 /*
 

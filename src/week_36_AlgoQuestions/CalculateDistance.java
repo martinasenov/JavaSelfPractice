@@ -6,7 +6,14 @@ public class CalculateDistance {
     public static void main(String[] args) {
 
         System.out.println(calculateDistance(25, 4, 1, -6));
-        System.out.println(calculateDistance(47, 43, -25, -11));
+        System.out.println(calculateDistance(-47, 43, -25, -11));
+
+        System.out.println();
+
+        System.out.println(calculateDistance2(25, 4, 1, -6));
+        System.out.println(calculateDistance2(-47, 43, -25, -11));
+
+
 
     }
 
@@ -49,6 +56,20 @@ public class CalculateDistance {
 
         return false;
     }
+
+
+
+
+
+    public static double calculateDistance2(int x1, int y1, int x2, int y2){
+
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    }
+
+
+
+
+
 }
 
 

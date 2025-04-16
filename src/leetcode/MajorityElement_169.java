@@ -38,7 +38,6 @@ public class MajorityElement_169 {
 
                     count++;
                 }
-
             }
             result=Math.max(result,count);
 

@@ -10,10 +10,29 @@ public class SumOfDigits {
     public static void main(String[] args) {
 
 
-        System.out.println(sumOfDigits(687));
+        /*System.out.println(sumOfDigits(687));
         System.out.println(sumOfDigits(12));
-        System.out.println(sumOfDigits(37));
+        System.out.println(sumOfDigits(37));*/
 
+        System.out.println(sumOfDigits2(687));
+        System.out.println(sumOfDigits2(12));
+        System.out.println(sumOfDigits2(37));
+        System.out.println(sumOfDigits2(123456789));
+
+        System.out.println(sumOfDigits2(213));
+
+
+    }
+
+    public static int sumOfDigits2(int number){
+
+        int result=0;
+
+        while (number>0){
+            result+=number%10;
+            number/=10;
+        }
+        return result;
 
     }
 

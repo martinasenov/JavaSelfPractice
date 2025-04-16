@@ -1,5 +1,9 @@
 package week25_AlgoQuestions;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class LengthOfLastWord {
 
     public static void main(String[] args) {
@@ -18,6 +22,16 @@ public class LengthOfLastWord {
         word=word.substring(word.lastIndexOf(" ")+1);
 
         return word.length();
+    }
+
+
+    @Test
+    public void testFindLengthOfLastWord() {
+        assertEquals(5, findLengthOfLastWord("Hello World"));
+        assertEquals(4, findLengthOfLastWord(" fly me to the moon "));
+        assertEquals(6, findLengthOfLastWord("luffy is still joyboy"));
+        assertEquals(1, findLengthOfLastWord("a"));
+        assertEquals(0, findLengthOfLastWord(" "));
     }
 }
 /*
